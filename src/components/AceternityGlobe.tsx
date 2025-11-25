@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react'
+import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Sphere, MeshDistortMaterial, MeshTransmissionMaterial } from '@react-three/drei'
 import * as THREE from 'three'
@@ -6,7 +6,7 @@ import * as THREE from 'three'
 function AceternityGlobe() {
   const globeRef = useRef<THREE.Mesh>(null)
 
-  useFrame((state) => {
+  useFrame(() => {
     if (globeRef.current) {
       globeRef.current.rotation.y += 0.002
     }
@@ -48,4 +48,3 @@ function AceternityGlobe() {
 }
 
 export default AceternityGlobe
-
